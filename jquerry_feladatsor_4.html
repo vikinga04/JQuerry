@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <label for="input-field">Víz hőmérséklete:</label>
+    <input type="number" id="input-field" name="input-field">
+    <img src="" alt="Víz állapota" id="water-img">
+
+    <script>
+
+        $(document).ready(function () {
+            $('#input-field').on('input', function () {
+                var temp = parseInt($(this).val());
+                var imgSrc = "";
+
+                if (temp < 0) {
+                    imgSrc = "ice.jpg";
+                }
+                else if (temp > 100) {
+                    imgSrc = "steam.jpg";
+                } else {
+                    imgSrc = "water.jpg";
+                }
+
+                $('#water-img').attr("src", imgSrc);
+                $('#water-img').attr("title", "Víz állapota: " + imgSrc.split(".")[0]);
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

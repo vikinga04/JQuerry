@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <label for="password-input">Jelszó:</label>
+    <input type="password" id="password-input">
+    <button id="show-hide-btn">Mutat/Elrejt</button>
+    
+    <script>
+        const passwordInput = document.getElementById('password-input');
+        const showHideBtn = document.getElementById('show-hide-btn');
+
+        showHideBtn.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showHideBtn.text('Elrejt');
+            } else {
+                passwordInput.type = 'password';
+                showHideBtn.text('Mutat');
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
